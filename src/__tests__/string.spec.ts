@@ -1,6 +1,6 @@
 import { capitalizeFirstLetter } from "../strings"
 
-describe('stringFunction',()=>{
+describe('capitalizeFirstLetter',()=>{
     test('should make the first letter capital',()=>{
         const result = capitalizeFirstLetter('good-day')
 
@@ -16,5 +16,17 @@ describe('stringFunction',()=>{
         const result = capitalizeFirstLetter('Good-day')
         expect(result).toBe('Good-day')
     })
+    
+    test('should handle a single character', () => {
+        expect(capitalizeFirstLetter('a')).toBe('A');
+    });
+
+    test('should not modify non-letter first characters', () => {
+        expect(capitalizeFirstLetter('123abc')).toBe('123abc');
+    });
+    
+    test('should handle all uppercase string', () => {
+        expect(capitalizeFirstLetter('HELLO')).toBe('HELLO');
+    });
 
 })
